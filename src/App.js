@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import Ember from './Ember';
+import ReactJs from './React';
+import Vue from './Vue';
+import Angular from './Angular';
 import {
     AppRegistry,
     StyleSheet,
@@ -6,6 +10,7 @@ import {
     View
 } from 'react-native';
 import styled from 'styled-components/native';
+import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 
 const Container = styled.View`
     justifyContent: center;
@@ -38,4 +43,29 @@ export default class tribute extends Component {
     }
 }
 
-AppRegistry.registerComponent('tribute', () => tribute);
+const mainNavigator = createAppContainer(
+createBottomTabNavigator({
+    Home: {
+    screen: tribute,
+    path: ''
+    },
+    Angular: {
+    screen: Angular,
+    path: 'angular'
+    },
+    React: {
+    screen: ReactJs,
+    path: 'react'
+    },
+    Ember: {
+    screen: Ember,
+    path: 'ember'
+    },
+    Vue: {
+    screen: Vue,
+    path: 'vue'
+    }
+    })
+    );
+    
+AppRegistry.registerComponent('tribute', () => mainNavigator);
