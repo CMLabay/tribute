@@ -3,7 +3,8 @@ import {
     AppRegistry,
     StyleSheet,
     Text,
-    View
+    View,
+    Image
 } from 'react-native';
 import styled from 'styled-components/native';
 
@@ -30,4 +31,19 @@ export default class Angular extends Component {
             </Container>
         );
     }
+}
+
+
+Angular.navigationOptions = {
+    tabBarIcon: (
+        <Image
+            style={{width: 30, height: 30}}
+            source={require('./img/runner.jpg')}/>
+    )
+    ,
+    tabBarOptions: {
+        activeTintColor: 'tomato',
+        inactiveTintColor: 'gray',
+        showIcon: true
+      },
 }

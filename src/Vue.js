@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import NavImage from './NavImage'
 import {
     AppRegistry,
     StyleSheet,
     Text,
-    View
+    View,
+    Image
 } from 'react-native';
 import styled from 'styled-components/native';
 
@@ -25,9 +27,25 @@ export default class Vue extends Component {
         return(
             <Container>
                 <TextStyled>
-                    Vue Jeopardy
+                    <Image 
+                        style={{width: 200, height: 200}}
+                        source={require('./img/WTH.jpeg')}/>                
                 </TextStyled>
             </Container>
         );
     }
+}
+
+Vue.navigationOptions = {
+    tabBarIcon: (
+        <Image
+            style={{width: 30, height: 30}}
+            source={require('./img/WTH.jpeg')}/>
+    )
+    ,
+    tabBarOptions: {
+        activeTintColor: 'tomato',
+        inactiveTintColor: 'gray',
+        showIcon: true
+      },
 }

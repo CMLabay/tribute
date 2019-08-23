@@ -7,7 +7,8 @@ import {
     AppRegistry,
     StyleSheet,
     Text,
-    View
+    View,
+    Image
 } from 'react-native';
 import styled from 'styled-components/native';
 import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
@@ -28,20 +29,28 @@ export default class tribute extends Component {
     render(){
         return(
             <Container>
-                <TextStyled>
-                    Welcome to React Native Butts!
-                </TextStyled>
-                <Text>
-                    To get started, edit index.ios.js
-                </Text>
-                <Text>
-                    Press Cmd+R to reload,{'\n'}
-                    Cmd+D or shake for dev menu
-                </Text>
+                <Image 
+                    style={{width: 250, height: 150}}
+                    source={require('./img/Utah.jpg')}/>
             </Container>
         );
     }
 }
+
+tribute.navigationOptions = {
+    tabBarIcon: (
+        <Image
+            style={{width: 30, height: 30}}
+            source={require('./img/runner.png')}/>
+    )
+    ,
+    tabBarOptions: {
+        activeTintColor: 'tomato',
+        inactiveTintColor: 'gray',
+        showIcon: true
+      },
+}
+
 
 const mainNavigator = createAppContainer(
 createBottomTabNavigator({
@@ -64,7 +73,7 @@ createBottomTabNavigator({
     Vue: {
     screen: Vue,
     path: 'vue'
-    }
+    },
     })
     );
     
