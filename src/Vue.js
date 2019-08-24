@@ -39,7 +39,7 @@ export default class Vue extends Component {
 Vue.navigationOptions = {
     tabBarIcon: (
         <Image
-            style={{width: 30, height: 30}}
+            style={{width: 20, height: 30}}
             source={require('./img/WTH.jpeg')}/>
     )
     ,
